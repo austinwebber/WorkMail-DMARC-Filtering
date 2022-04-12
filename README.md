@@ -6,12 +6,12 @@ Amazon WorkMail enforces inbound DMARC verification by default, however, if said
 ```
 nslookup _dmarc.gmail.com
 
-Output (at time of writing): "v=DMARC1; p=none; sp=quarantine; rua=mailto:mailauth-reports@google.com"
+Output: "v=DMARC1; p=none; sp=quarantine; rua=mailto:mailauth-reports@google.com"
 ```
 ```
 nslookup _dmarc.yahoo.com
 
-Output (at time of writing): "v=DMARC1; p=reject; pct=100; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;"
+Output: "v=DMARC1; p=reject; pct=100; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;"
 ```
 
 As you see, spoofed emails sent from gmail.com will tell the receiving domain to take no action (p=none). On the other hand, spoofed emails sent from yahoo.com will tell the receiving domain to reject (p=reject) said spoofed emails that fail DMARC.
