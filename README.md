@@ -4,13 +4,13 @@ Amazon WorkMail and SES DMARC Verdict Filtering using AWS Lambda with Python
 Amazon WorkMail enforces inbound DMARC verification by default, however, if said domain owner has their DMARC policy set to none (i.e. gmail.com does this), then spoofing emails can pass into WorkMail user's inboxes without issues. You can use nslookup (on Windows computers) to verify the DMARC policy of such domains:
 
 ```
-nslookup _dmarc.gmail.com
+nslookup -type=TXT _dmarc.gmail.com
 ```
 
 Output: "v=DMARC1; p=none; sp=quarantine; rua=mailto:mailauth-reports@google.com"
 
 ```
-nslookup _dmarc.yahoo.com
+nslookup -type=TXT _dmarc.yahoo.com
 ```
 
 Output: "v=DMARC1; p=reject; pct=100; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;"
