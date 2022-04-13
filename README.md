@@ -25,10 +25,6 @@ As WorkMail uses Amazon Simple Email Service (SES) for handling email, so there 
 1. A Lambda function integrated in an SES receipt rule to execute at position 1, which would stop the SES INBOUND_MAIL rule set on the email if the DMARC verdict is fail (this would apply filtering to all WorkMail organizations by default)
 2. A Lambda function integrated in WorkMail as an inbound rule to execute on all incoming email specific to the WorkMail organization (this would apply filtering to individual WorkMail organizations)
 
-Solution 1 - SES Receipt Rule w/ AWS Lambda
+Solution 1 - [SES Receipt Rule w/ AWS Lambda](https://github.com/austinwebber/WorkMail-DMARC-Filtering/tree/main/ses-dmarc-verdict-filtering link)
 
-#### to be written
-
-Solution 2 - WorkMail Inbound Rule w/ AWS Lambda
-
-#### to be wrriten
+Solution 2 - [WorkMail Inbound Rule w/ AWS Lambda](https://github.com/austinwebber/WorkMail-DMARC-Filtering/tree/main/workmail-dmarc-verdict-filtering link)
