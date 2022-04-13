@@ -1,6 +1,7 @@
 # WorkMail/SES DMARC Filtering w/ AWS Lambda
 Amazon WorkMail and SES DMARC Verdict Filtering using AWS Lambda with Python
 
+## Background
 What is DMARC? https://www.fortinet.com/resources/cyberglossary/dmarc
 
 Amazon WorkMail enforces inbound DMARC verification by default, however, if said domain owner has their DMARC policy set to none (i.e. gmail.com does this), then spoofing emails can pass into WorkMail user's inboxes without issues. You can use nslookup (on Windows computers) to verify the DMARC policy of such domains:
@@ -17,10 +18,11 @@ nslookup -type=TXT _dmarc.yahoo.com
 
 Output: "v=DMARC1; p=reject; pct=100; rua=mailto:d@rua.agari.com; ruf=mailto:d@ruf.agari.com;"
 
-
 As you see, spoofed emails sent from gmail.com will tell the receiving domain to take no action (p=none). On the other hand, spoofed emails sent from yahoo.com will tell the receiving domain to reject (p=reject) said spoofed emails that fail DMARC.
 
 To address this, you can integrate an AWS Lambda function to invoke on incoming email depending on whether the DMARC verdict is fail or success. This theoretically decreases the amount of spoofing emails that your WorkMail users receive.
+
+## Solutions to bounce/drop all emails that fail DMARC verification:
 
 As WorkMail uses Amazon Simple Email Service (SES) for handling email, so there are 2 solutions to this I've created:
 
