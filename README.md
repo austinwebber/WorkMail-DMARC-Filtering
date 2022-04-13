@@ -18,7 +18,7 @@ Output: "v=DMARC1; p=reject; pct=100; rua=mailto:d@rua.agari.com; ruf=mailto:d@r
 
 As you see, spoofed emails sent from gmail.com will tell the receiving domain to take no action (p=none). On the other hand, spoofed emails sent from yahoo.com will tell the receiving domain to reject (p=reject) said spoofed emails that fail DMARC.
 
-To solve this, you can execute an AWS Lambda function to take action on incoming email depending on whether the DMARC verdict is fail or success. This theoretically decreases the amount of spoofing emails that your WorkMail users receive.
+To address this, you can execute an AWS Lambda function to take action on incoming email depending on whether the DMARC verdict is fail or success. This theoretically decreases the amount of spoofing emails that your WorkMail users receive.
 
 As WorkMail uses Amazon Simple Email Service (SES) for handling email, so there are 2 solutions to this I've created:
 
