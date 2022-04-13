@@ -15,7 +15,7 @@ Integrating the filtering of emails depending on DMARC verdict in SES (and subse
 
 ## Implementation:
 
-1. Copy the code from [SES_DMARC_app.py](https://github.com/austinwebber/WorkMail-DMARC-Filtering/blob/main/ses-dmarc-verdict-filtering/SES_DMARC_app.py) in this repo
+1. Copy the code from [SES_DMARC_app.py](https://github.com/austinwebber/WorkMail-SES-DMARC/blob/main/ses-dmarc-verdict-filtering/SES_DMARC_app.py) in this repo
 
 2. Paste the code into your blank Lambda function, deploy the changes
 
